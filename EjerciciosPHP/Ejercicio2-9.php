@@ -8,7 +8,6 @@
         table {
             border-collapse: collapse;
             margin: 20px auto;
-            background-color: #ccffcc;
         }
         th, td {
             border: 2px solid black;
@@ -35,10 +34,8 @@
                 // Bucle para generar las filas
                 for ($i = 1; $i <= 3; $i++) {
                     print "<tr>";
-                    // Primera columna con los números de fila
                     print "<th>$i</th>";
                     
-                    // Bucle para generar las celdas dentro de cada fila
                     for ($j = 1; $j <= 4; $j++) {
                         print "<td>$i-$j</td>";
                     }
