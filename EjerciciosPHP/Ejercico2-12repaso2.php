@@ -13,37 +13,41 @@
         $colores_arcoiris = ["rojo", "naranja", "amarillo", "verde", "azul", "índigo", "violeta"];
         $colores_cazados = []; 
 
-       
         while (count($colores_cazados) < 7) {
-            $nube_o_color = rand(0, 1);
+            $nube_o_color = mt_rand(0, 1);  // Usando mt_rand() en lugar de rand()
 
             if ($nube_o_color == 1) {
-                $color_cazado = $colores_arcoiris[rand(0, 6)];
+                $color_cazado = $colores_arcoiris[mt_rand(0, 6)];  // Usando mt_rand() aquí también
 
                 if (!in_array($color_cazado, $colores_cazados)) {
                     $colores_cazados[] = $color_cazado;
-                    print "<p>¡Has cazado el color $color_cazado!</p>";
+                    echo "<p style='color: $color_cazado;'>¡Has cazado el color $color_cazado!</p>";
                 } else {
-                    print "<p>Ya has cazado el color $color_cazado. Sigamos cazando...</p>";
+                    echo "<p>Ya has cazado el color $color_cazado. Sigamos cazando...</p>";
                 }
 
-                print "<p>Colores cazados hasta ahora: " . implode(", ", $colores_cazados) . "</p>";
+                echo "<p>Colores cazados hasta ahora: " . implode(", ", $colores_cazados) . "</p>";
+                
                 $colores_restantes = array_diff($colores_arcoiris, $colores_cazados);
-                print "<p>Colores restantes: " . implode(", ", $colores_restantes) . "</p>";
+                if (count($colores_restantes) > 0) {
+                    echo "<p>Colores restantes: " . implode(", ", $colores_restantes) . "</p>";
+                } else {
+                    echo "<p>¡No quedan colores por cazar!</p>";
+                }
 
             } else {
-                print "<p>¡Hay una nube! No has podido cazar un color esta vez.</p>";
+                echo "<p>¡Hay una nube! No has podido cazar un color esta vez.</p>";
             }
 
-            $pajarraco_aparece = rand(0, 1);
+            $pajarraco_aparece = mt_rand(0, 1);  // Usando mt_rand() aquí también
 
             if ($pajarraco_aparece == 1) {
-                print "<p><strong>¡Oh no! El pajarraco apareció y te derribó. ¡Juego terminado!</strong></p>";
+                echo "<p><strong>¡Oh no! El pajarraco apareció y te derribó. ¡Juego terminado!</strong></p>";
                 break;
             }
 
             if (count($colores_cazados) == 7) {
-                print "<p><strong>¡Felicidades! Has cazado todos los colores del arco iris.</strong></p>";
+                echo "<p><strong>¡Felicidades! Has cazado todos los colores del arco iris.</strong></p>";
             }
         }
     ?>
