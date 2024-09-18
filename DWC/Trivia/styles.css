@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.objetivo {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.quesitos-container {
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    border-radius: 50%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.quesito {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(200, 200, 200, 0.5);
+    clip-path: polygon(50% 50%, 100% 0, 120% 69%);
+    position: absolute;
+    transform-origin: 50% 50%;
+}
+
+#quesito1 { background-color: rgba(255, 0, 0, 0.5); transform: rotate(0deg); }
+#quesito2 { background-color: rgba(0, 0, 255, 0.5); transform: rotate(60deg); }
+#quesito3 { background-color: rgba(0, 255, 0, 0.5); transform: rotate(120deg); }
+#quesito4 { background-color: rgba(255, 255, 0, 0.5); transform: rotate(180deg); }
+#quesito5 { background-color: rgba(255, 165, 0, 0.5); transform: rotate(240deg); }
+#quesito6 { background-color: rgba(255, 105, 180, 0.5); transform: rotate(300deg); }
+
+.recuadros-wrapper {
+    display: flex;
+    justify-content: center; /
+    width: 100%;
+}
+
+.recuadros-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; 
+}
+
+.recuadro {
+    width: 48%;
+    height: 100px;
+    margin: 10px 0;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    color: rgb(54, 54, 54);
+    font-size: 1.2em;
+    
+}
+
+
+#recuadro1 { background-color: rgba(255, 0, 0, 0.5); }
+#recuadro2 { background-color: rgba(0, 0, 255, 0.5); }
+#recuadro3 { background-color: rgba(0, 255, 0, 0.5); }
+#recuadro4 { background-color: rgba(255, 255, 0, 0.5); }
+#recuadro5 { background-color: rgba(255, 165, 0, 0.5); }
+#recuadro6 { background-color: rgba(255, 105, 180, 0.5); }
+
+.recuadro.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: green;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="objetivo">
+        ¡Acierta 4 para ganar!
+    </div>
+
+    <div class="quesitos-container">
+        <div class="quesito" id="quesito1"></div>
+        <div class="quesito" id="quesito2"></div>
+        <div class="quesito" id="quesito3"></div>
+        <div class="quesito" id="quesito4"></div>
+        <div class="quesito" id="quesito5"></div>
+        <div class="quesito" id="quesito6"></div>
+    </div>
+
+    <div class="recuadros-wrapper">
+
+       
+        <div class="recuadros-container">
+            <div class="recuadro" id="recuadro1" onclick="preguntar(1)">Geografía</div>
+            <div class="recuadro" id="recuadro2" onclick="preguntar(2)">Arte</div>
+            <div class="recuadro" id="recuadro3" onclick="preguntar(3)">Espectáculos</div>
+            <div class="recuadro" id="recuadro4" onclick="preguntar(4)">Historia</div>
+            <div class="recuadro" id="recuadro5" onclick="preguntar(5)">Ciencias</div>
+            <div class="recuadro" id="recuadro6" onclick="preguntar(6)">Deportes</div>
+        </div>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
