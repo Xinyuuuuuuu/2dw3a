@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaeaea;
+}
+
+header {
+    background-color: #ffa366;
+    color: grey;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 120px); 
+}
+
+aside {
+    background-color: #ffcc66;
+    width: 25%;
+    padding: 20px;
+    color: grey;
+}
+
+main {
+    background-color: #99ccff;
+    width: 75%;
+    padding: 20px;
+    color: white;
+}
+
+footer {
+    background-color: #99cc33;
+    color: grey;
+    padding: 20px;
+}
