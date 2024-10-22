@@ -14,10 +14,9 @@
         $colores_cazados = []; 
 
         while (count($colores_cazados) < 7) {
-            $nube_o_color = mt_rand(0, 1);  // Usando mt_rand() en lugar de rand()
-
+            $nube_o_color = mt_rand(0, 1);  
             if ($nube_o_color == 1) {
-                $color_cazado = $colores_arcoiris[mt_rand(0, 6)];  // Usando mt_rand() aquí también
+                $color_cazado = $colores_arcoiris[mt_rand(0, 6)];  
 
                 if (!in_array($color_cazado, $colores_cazados)) {
                     $colores_cazados[] = $color_cazado;
@@ -39,7 +38,7 @@
                 echo "<p>¡Hay una nube! No has podido cazar un color esta vez.</p>";
             }
 
-            $pajarraco_aparece = mt_rand(0, 1);  // Usando mt_rand() aquí también
+            $pajarraco_aparece = mt_rand(0, 1); 
 
             if ($pajarraco_aparece == 1) {
                 echo "<p><strong>¡Oh no! El pajarraco apareció y te derribó. ¡Juego terminado!</strong></p>";
