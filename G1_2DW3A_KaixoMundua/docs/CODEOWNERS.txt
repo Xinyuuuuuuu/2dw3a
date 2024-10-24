@@ -1,0 +1,5 @@
+# Definir propietarios por directorio o archivos específicos
+# Los propietarios deben ser miembros del equipo o individuos específicos.
+
+# Propietario para todo el código
+* @AitorLo12/G1_2DW3 @nexustor/G1_2DW3

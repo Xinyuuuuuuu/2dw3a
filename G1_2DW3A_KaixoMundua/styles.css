@@ -1,0 +1,1358 @@
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: calibri, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+body {
+
+  background-color: #F6EDC7;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.7s;
+  padding: 30px 20px;
+  z-index: 10;
+}
+
+header.abajo, .galeria-header {
+  background: #75A47F;
+  padding: 15px 20px;
+}
+
+header .logo {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  letter-spacing: 2px;
+  transition: 1.5s;
+  text-decoration: none;
+  padding-right: 10%;
+  display: flex;
+  /* Asegura que el logo y la imagen estén en la misma línea */
+  align-items: center;
+  margin-right: 10%;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  /* Alinea los elementos a la derecha */
+  align-items: center;
+}
+
+/* menu desplegable */
+
+.topnav .icon {
+  display: none;
+}
+
+.topnav {
+
+  justify-content: center;
+  align-items: center;
+  margin-left: center;
+  overflow: hidden;
+}
+
+.topnav ul {
+  display: flex;
+}
+
+.topnav a {
+  float: left;
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+.logo-imagen {
+  height: 50px;
+  margin-left: 3%;
+  vertical-align: middle;
+  padding-bottom: 1%;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  font-family: helvetica;
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.7s;
+}
+
+
+header nav ul li:last-child a {
+  margin-left: right;
+}
+
+
+/* Efecto de hover sobre los enlaces */
+.color:hover {
+  transform: translateY(-3px); /* Eleva el enlace al pasar el mouse */
+}
+
+/* Pseudo-elemento para la animación de subrayado en hover */
+.color::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background-color: white;
+  transform: scaleY(0); /* Oculta la barra inicialmente */
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+
+.color:hover::before {
+  transform: scaleY(1); 
+}
+
+.color.active {
+  color: white; 
+  font-weight: bold;
+  transform: translateY(-3px); 
+}
+
+.color.active::before {
+  transform: scaleY(1); 
+}
+
+.zona1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(img/fondos/fondo.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zona2 {
+  margin-bottom: 5%;
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  background: url('img/fondos/fondo2.jpg');
+  /* Nueva imagen de fondo para ODS */
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zona3 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(img/fondos/fondo3.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zona4 {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  background: url(img/fondos/fondo4.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.texto-encima {
+  position: absolute;
+  color: white;
+  /* Color del texto */
+  text-align: center;
+  /* Centra el texto dentro del div */
+  padding: 20px;
+}
+
+.texto-encimaOds {
+  color: white;
+  /* Color del texto */
+  text-align: center;
+  font-size: 20px;
+}
+
+header.abajo .logo,
+header.abajo ul li a {
+  color: white;
+}
+
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 15px;
+  color: #845B35;
+}
+
+h4 {
+  color: #848484;
+  font-size: 15px;
+  text-align: center;
+}
+
+
+/* Sección con dos columnas */
+.columnaPregunta {
+  margin-top: 4%;
+  margin-left: 4%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 20px;
+  margin-right: 4%;
+  margin-bottom: 2%;
+
+
+}
+
+.columna1 {
+  flex: 1;
+  padding-right: 20px;
+  padding-top: 2%;
+  padding-left: 5%;
+  margin-right: 6%;
+  text-align: justify;
+  font-family: calibri, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.columna2 {
+  margin-top: 1%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-columna {
+  width: 75%;
+  height: 95%;
+  border-radius: 10px;
+
+}
+
+.columna1 h1 {
+  margin-bottom: 2%;
+}
+
+.columna1 h3 {
+  margin-bottom: 2%;
+}
+
+/* Estructura de dos columnas, donde la izquierda es fija y la derecha desplazable */
+.columnaVoluntariados {
+  display: flex;
+  background-color: #EDE6C0;
+
+}
+
+
+.left {
+  flex: 1;
+  text-align: center;
+  margin-top: 5%;
+  position: relative;
+  top: 10%;
+  /* Ajusta el valor según donde quieras que se fije el texto al hacer scroll */
+  overflow: hidden;
+}
+
+
+.right {
+  flex: 2;
+  padding-left: 50%;
+  padding-bottom: 10%;
+  position: relative;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.edoezin-title {
+  margin-top: 4%; /* Ajusta este valor según necesites */
+  margin-bottom: 1%;
+  text-align: center; /* Centra el texto, si deseas */
+}
+
+#container {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.tileItem {
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+
+
+.tileItem:hover {
+  transform: scale(1.05);
+  transition: all 0.5s ease;
+}
+
+
+#galleryContainer {
+  height: 700px;  
+  width: 1000px;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#toggle {
+  height: 10vh;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+#tilesView {
+  min-height: 100vh;
+  width: 100vw;
+  background: rgb(246,210,106);
+  background:  #F6EDC7;
+  display: none;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+
+#galleryView {
+  height: 100vh;
+  width: 100vw;
+  background: rgb(246,210,106);
+  background: #F6EDC7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#outer3 {
+  width: 100px;
+  height: 40px;
+  background-color: white;
+  margin: 10px auto;
+  border-radius: 3px;
+  border: 2px solid white;
+  transition: all 0.5s;
+}
+#slider3 {
+  height: 36px;
+  width: 46px;
+  background-color:  #F6EDC7;
+  border-radius: 3px;  
+  transition: all 0.5s;
+}
+#slider3.active {
+  -webkit-transform: translatex(50px);
+  -ms-transform: translatex(50px);
+  -o-transform: translatex(50px);
+  transform: translatex(50px);
+  transition: all 0.5s;
+  background-color:  #F6EDC7;
+}
+#outer3.outerActive {
+  background-color: white;
+  border: 2px solid white;
+  transition: all 0.5s;
+}
+#mainView {
+  height: 550px;  /* Aumenta la altura */
+  width: 650px;    
+  border-radius: 5px;
+  background-color:  #F6EDC7;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 1;
+  transition: all 1s;  
+  background-size: cover; /* Asegura que la imagen cubra el área */
+  background-position: center;
+}
+#mainView:hover {
+  transform: scale(1.1);
+  transition: all 1s;  
+}
+#leftView {
+  height: 500px;  /* Aumenta la altura */
+  width: 200px;
+  opacity: 0.5;
+  border-radius: 5px;
+  transform: skewy(5deg);
+  transform-origin: top right;
+  background-color:  #F6EDC7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  background-size: cover; /* Asegura que la imagen cubra el área */
+  background-position: center;
+}
+#leftView:hover {
+  opacity: 1;
+  transition: all 1s;
+}
+#rightView {
+  height: 500px;  /* Aumenta la altura */
+  width: 200px; 
+  opacity: 0.5;
+  border-radius: 5px;
+  transform: skewy(-5deg);
+  transform-origin: top left;
+  background-color:  #F6EDC7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  background-size: cover; /* Asegura que la imagen cubra el área */
+  background-position: center;
+}
+#rightView:hover {
+  opacity: 1;
+  transition: all 1s;
+}
+.navBtns {
+  width: 50px;            
+  height: 50px;            
+  border-radius: 50%;      
+  border: 2px solid white;  
+  background-color: white;  
+  position: absolute;        
+  z-index: 1;              
+  display: flex;            
+  justify-content: center;
+  align-items: center;      
+  opacity: 0.8;            
+  transition: background-color 0.3s;
+}
+#navLeft {
+  left: 30px;
+  z-index: 1;
+}
+#navRight {
+  right: 30px;
+  z-index: 1;
+}
+.navBtns:hover {
+  background-color: #F6EDC7;
+  opacity: 1;
+}
+
+/* Flechas en CSS */
+.navBtns::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+#navLeft::before {
+  border-right: 10px solid black;
+}
+#navRight::before {
+  border-left: 10px solid black;
+}
+#linkTag {
+  cursor: pointer;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+footer {
+  background: #75A47F;
+  color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: 0.7s;
+  padding: 30px 20px;
+  z-index: 10;
+}
+
+footer ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul li a {
+  position: relative;
+  font-family: helvetica;
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.7s;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  /* Oculta cualquier desbordamiento en el eje X */
+}
+
+/* Container donde guardaremos las tarjetas */
+.card-container {
+  perspective: calc(100px * 100000)
+    /* Habilita el efecto 3D */
+}
+
+
+/*Clase para definir la tarjeta que tiene que dar la vuelta */
+.card {
+  width: 550px;
+  height: 550px;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  transform: rotate(100);
+  padding-bottom: 5%;
+  margin-bottom: 10%;
+  border-radius: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  /* Sombra básica */
+
+
+}
+
+
+/* Parte trasera y delantera que tengan mismas medidas */
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  /* Oculta la cara posterior al rotar */
+}
+
+
+/* Parte delantera y trasera imagen */
+.front img,
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ajusta la imagen al tamaño exacto */
+}
+
+
+/* Parte trasera de la tarjeta */
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+  transform: rotateY(180deg);
+  /* Inicialmente está oculta */
+}
+
+
+.back p {
+
+
+  position: absolute;
+
+
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+
+/* tres imagenes que salen el pagina de ods al inicio*/
+.Introduccion {
+  margin-top: 4%;
+  margin-bottom: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+  display: flex;
+  /* Habilita Flexbox */
+  justify-content: space-between;
+  /* Espacio uniforme entre las imágenes */
+  padding: 20px;
+  /* Espacio interno */
+}
+
+.Introduccion section {
+  flex: 1;
+  /* Cada imagen ocupa el mismo espacio */
+  display: flex;
+  /* Habilita Flexbox en cada contenedor de imagen */
+  justify-content: center;
+  /* Centra la imagen horizontalmente */
+  align-items: center;
+  /* Centra la imagen verticalmente */
+}
+
+.intro {
+  width: 250px;
+  /* Ajusta el ancho de la imagen a un tamaño más pequeño */
+  height: 250px;
+  /* Mantiene la proporción de la imagen */
+  object-fit: cover;
+  /* Asegura que la imagen se recorte adecuadamente */
+  border-radius: 40px;
+}
+
+.textoMedio {
+  text-align: center;
+  font-size: 20px;
+}
+
+.regalarArbol {
+  display: relative;
+  /* Usamos flexbox para alinear los elementos dentro de esta sección */
+  justify-content: space-between;
+  /* Esto empuja los elementos hacia los extremos si es necesario */
+  align-items: flex-start;
+  /* Alinea los elementos en la parte superior */
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  background-color: #EDE6C0;
+}
+
+/* Estilos para la primera columna (arbolText) */
+.arbolText {
+  display: relative;
+  /* Ocupa la mayor parte del espacio disponible */
+  padding: 3%;
+  padding-right: 55%;
+  padding-bottom: 10%;
+  background-color: #F6EDC7;
+  text-align: justify;
+  border-radius: 20px;
+  margin-right: 20px;
+  /* Espacio entre la primera y segunda columna */
+  z-index: 1;
+
+}
+
+/* Estilos para la segunda columna (arbolText2) */
+.arbolText2 {
+  display: absolute;
+  /* Ocupa la mayor parte del espacio disponible */
+  padding: 3%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  top: 40%;
+  background-color: #F6EDC7;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  /* Sombra básica */
+  position: absolute;
+  /* Posicionamos este elemento de manera absoluta para que se superponga */
+  top: 185%;
+  /* Ajusta la posición vertical para que se sitúe sobre arbolText */
+  right: 12%;
+  /* Ajusta la posición horizontal a la derecha */
+  width: 40%;
+  /* Ajusta el ancho de la segunda tarjeta */
+  z-index: 2;
+  /* Este fondo se sitúa por encima del fondo de arbolText */
+}
+
+.revista {
+  display: flex;
+}
+
+.animal-contenedor {
+
+  width: 1000px;
+  margin: 0 auto;
+
+}
+
+.animal-contenedor .animal-raza:nth-of-type(odd) .animal-fila .animal-izquierda{
+
+  background-color: #F6EDC7;
+
+}
+
+.animal-contenedor .animal-raza:nth-of-type(even) .animal-fila .animal-izquierda{
+
+  background-color: #E7DFB1;
+
+}
+
+.animal-raza {
+  
+  padding-top: 30px;
+  margin: 60px 0;
+
+}
+
+.animal-raza h1 {
+  padding-top: 30px;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+}
+
+.animal-raza hr {
+  border: 0;
+  height: 1.5px;
+  background-color: #666;
+  margin: 10px 15px;
+
+}
+
+.animal-fila {
+  display: flex;
+  align-items: stretch; 
+  margin-top: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.animal-imagen {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.animal-info {
+  flex-grow: 1;
+}
+
+.animal-nombre {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.animal-detalles {
+  font-size: 1em;
+  color: #5C5C5C;
+}
+
+.animal-detalles p {
+  margin: 5px 0;
+}
+
+.animal-izquierda, .animal-derecha {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animal-derecha {
+  background-color: #75A47F;
+  color: #FFFFFF;
+}
+
+.login-container {
+  position: absolute;
+  right: 20px;
+  /* Alinea el contenedor del login a la derecha */
+  top: 10px;
+}
+
+/* Asegurarse de que el contenedor del icono tenga un tamaño fijo */
+.login-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Ajustar el tamaño de la imagen dentro del contenedor */
+.login-icon img {
+  width: 100%;
+  /* Imagen se ajusta al tamaño del contenedor */
+  height: 100%;
+  object-fit: contain;
+  /* Mantiene las proporciones del icono */
+}
+
+/* Estilos del dropdown oculto por defecto */
+.dropdown-content {
+  display: none;
+  /* Login oculto por defecto */
+  position: absolute;
+  background-color: white;
+  color: black;
+  min-width: 200px;
+  padding: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 50px;
+  /* Se desplegará debajo del icono */
+  right: 0;
+  /* Alineado con la parte derecha del icono */
+}
+
+/* Estilo del formulario y los elementos dentro del login */
+.dropdown-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content input {
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.dropdown-content button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-content a {
+  color: #5C5C5C;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive del header y nav */
+@media screen and (max-width:750px) {
+  header {
+    align-items: center;
+  }
+
+  .topnav>ul>li>a {
+    display: none;
+  }
+
+  .topnav>ul>li>a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav ul {
+    display: block;
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.response ul {
+    display: block
+  }
+
+  .topnav.responsive ul>li>a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive>ul>li>a {
+
+    display: block;
+    text-align: left;
+  }
+
+  a.icon {
+    float: right;
+    display: block;
+  }
+
+
+
+
+  .columnaPregunta {
+    margin-top: 4%;
+    margin-left: 4%;
+    display: block;
+    justify-content: space-between;
+    padding: 50px 20px;
+    margin-right: 4%;
+    margin-bottom: 2%;
+  }
+
+  .columnaVoluntariados {
+    display: block;
+    height: 100vh;
+    margin-top: 7%;
+    padding-top: 4%;
+    background-color: #EDE6C0;
+  }
+
+  footer ul {
+    position: relative;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+/* responsive de la pagina de inicio */
+@media screen and (max-width:600px) {
+  .columnaPregunta {
+
+      margin-top: 4%;
+      margin-left: 4%;
+      display: block;
+      justify-content: space-between;
+      padding: 50px 20px;
+      margin-right: 4%;
+      margin-bottom: 1%;
+  }
+
+  .columna1 {
+      flex: 1;
+      padding-right: 20px;
+      padding-top: 2%;
+      padding-left: 5%;
+      margin-right: 6%;
+      margin-bottom: 10%;
+      text-align: justify;
+      font-family: calibri, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .columnaVoluntariados {
+    display: block;
+    background-color: #EDE6C0;
+}
+
+  .left {
+    /* flex: 1; */
+     text-align: center;
+    margin-top: 5%;
+    position: relative;
+    /* top: 10%; */
+    overflow: hidden;
+  }
+
+  .right {
+    flex: 2;
+    padding-left: 0%; 
+    padding-bottom: 0%;
+    position: relative;
+  }
+  .edoezin-title {
+    margin-top: 2200px;
+    /* display: block; */
+    margin-bottom: 0%;
+    text-align: center;
+  }
+
+  h1 {
+     margin-bottom: 10%;
+     font-size: 30px;
+     text-align: center;
+  }
+
+  #navLeft {
+    left: 28%;
+    z-index: 2;
+  }
+
+  #navRight {
+    right: 30%;
+    z-index: 2;
+}
+
+}
+
+/* responsive de la pagina animaliak */
+@media screen and (max-width:1100px){
+  .animal-contenedor {
+
+    width: 80%;
+
+  }
+
+  .animal-raza {
+      padding-top: 30px;
+      padding-left:0px;
+      margin: 10px 10px;
+  }
+  
+
+}
+
+/* Responsive de animaliak para moviles */
+@media (max-width: 950px) {
+  .animal-fila {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  .animal-izquierda,
+  .animal-derecha {
+      width: 100%;
+  }
+
+  .animal-derecha {
+      margin-bottom: 0; 
+  }
+
+  .animal-izquierda .animal-imagen {
+
+    order: 1;
+    position: top;
+    border-radius: 8px;
+
+
+  }
+
+  .animal-izquierda .animal-info {
+
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .animal-detalles {
+
+    order: 3;
+    margin-top: 10px;
+
+  }
+
+
+}
+
+/* Responsive de la pagina ods */
+
+@media screen and (max-width:1100px){
+  .Introduccion {
+      margin-top: 4%;
+      margin-bottom: 4%;
+      margin-left: 4%;
+      margin-right: 4%;
+      display: block;
+      justify-content: space-between;
+      padding: 20px;
+  }
+
+  .Introduccion section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2%;
+  }
+
+  .arbolText {
+      display: relative;
+      padding: 3%;
+      padding-bottom: 10%;
+      background-color: #F6EDC7;
+      text-align: justify;
+      border-radius: 20px;
+      margin-right: 20px;
+      margin-bottom: 5%;
+      z-index: 1;
+  }
+
+  .arbolText2 {
+      display: absolute;
+      padding: 3%;
+      padding-top: 4%;
+      padding-bottom: 4%;
+      top: 40%;
+      background-color: #F6EDC7;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      right:auto;
+      width:96%;
+      margin-top:20px;
+      margin-left:8px;
+  }
+  
+}
+
+/* Barra de búsqueda fija pegada justo al header */
+.search-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #F6EDC7;
+  z-index: 9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px; /* Ajuste para pegar al header, dependiendo de la altura del header */
+}
+
+/* Campo de entrada de búsqueda */
+#search-bar {
+  width: 50%;
+  padding: 10px 10px 10px 50px; /* Espacio a la izquierda para el icono */
+  font-size: 16px;
+  border: 1px solid #A7A7A7;
+  background-color: #A7A7A7;
+  color: #5C5C5C;
+  border-radius: 5px;
+  box-sizing: border-box; /* Asegura que el borde forme parte de las dimensiones */
+  transition: background-color 0.3s ease, border-color 0.3s ease, border-width 0.3s ease; /* Transición suave */
+}
+
+/* Placeholder en el campo de búsqueda */
+#search-bar::placeholder {
+  color: #5C5C5C;
+}
+
+/* Estilos para el icono de búsqueda */
+.search-icon {
+  position: relative;
+  left: 1px; 
+  width: 20px;
+  height: 20px;
+  margin-right: -35px; 
+  z-index: 1;
+  pointer-events: none; 
+}
+
+/* Efecto al pasar el ratón por encima de la barra de búsqueda */
+#search-bar:hover {
+  background-color: #8F8F8F; 
+}
+
+/* Efecto al hacer clic en la barra de búsqueda */
+#search-bar:focus {
+  border-color: #75A47F; 
+  outline: none; 
+  box-sizing: border-box; 
+}
+
+
+/* Contenedor de la galería */
+.gallery-container {
+  margin-top: 160px; 
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 10px;
+  padding: 20px;
+}
+
+/* Estilo de los items de la galería */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1); /* Efecto zoom al pasar por encima */
+}
+
+
+
+.jarduerak {
+
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+
+}
+
+.jarduera-txartela {
+
+  display: flex;
+  background-color: #E7DFB1;
+  border-radius: 30px;
+  height: 150px;
+  width: 300px;
+  justify-content: center;
+  align-items: stretch; 
+  margin-top: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+
+}
+
+.jarduera-imagen {
+  
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 20px;
+
+}
+
+.jarduera-info {
+
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+}
+
+.jarduera.boton {
+
+
+}
+
+.revista {
+  display: flex;
+  background-color: #F6EDC7;
+  margin: 0;
+  padding: 0;
+  gap: 0; /* Elimina el espacio entre columnas */
+  height: 100vh; /* Establece la altura del contenedor principal */
+  overflow: hidden; /* Esto recorta cualquier contenido que se desborde del contenedor */
+
+}
+
+.revistaColumna1,
+.revistaColumna2,
+.revistaColumna3,
+.revistaColumna4 {
+  flex: 1; /* Cada columna ocupa el mismo espacio */
+  margin: 0; /* Elimina márgenes */
+  padding: 0; /* Elimina rellenos */
+  display: flex;
+  flex-direction: column;
+}
+
+.revistaColumna1,
+.revistaColumna3,
+.revistaColumna4 {
+  height: 100%; /* Asegura que las columnas ocupen toda la altura del contenedor */
+}
+
+.revistaColumna2 {
+  display: flex;
+  flex-direction: column;
+  text-align: justify; 
+  padding-right: 30px; 
+  padding-left: 20px;
+}
+
+.revistaColumna3{
+  background-color: #E7DFB1;
+  text-align: justify;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.ods {
+  width: 100%; /* Asegura que la imagen ocupe el 100% de su contenedor */
+  height: 100%; /* Asegura que la imagen ocupe el 100% de la altura del contenedor */
+  display: block; /* Evita espacios en la parte inferior */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+  margin: 0; /* Elimina cualquier margen que pueda causar espacio extra */
+}
+
+.ods1 {
+  width: 100%; /* Mantiene el ancho completo */
+  height: 70%; /* Ajusta la altura a 50% del contenedor */
+  display: block; /* Asegura que no haya espacio adicional */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+  margin: 0; /* Elimina márgenes */
+}
+
+
+.odsSmall {
+  width: 60%; 
+  height: auto;
+  display: block;
+  margin: 20px auto; /* Centra la imagen pequeña y le da espacio superior e inferior */
+}
+
+h5 {
+  color: #845B35;
+  font-size: 80px;
+  text-align: left;
+  margin: 10px 0; /* Espaciado superior e inferior */
+}
+
+h6 {
+  font-size: 40px;
+  margin: 10px 0; /* Espaciado superior e inferior */
+}
