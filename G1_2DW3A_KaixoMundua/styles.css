@@ -1144,51 +1144,116 @@ html {
   
 }
 
-/* Barra de búsqueda fija pegada justo al header */
+/* Clase común para controlar el ancho y centrar el contenido */
+.content-width {
+  max-width: 1200px; /* Asegura el mismo ancho máximo para la barra y la galería */
+  margin: 0 auto; /* Centra ambos en la pantalla */
+  padding: 0; /* Elimina padding innecesario */
+}
+
+/* Barra de búsqueda fija */
 .search-bar-container {
   position: fixed;
-  top: 0;
+  top: 80px; /* Ajustado para que se muestre justo debajo del header */
   left: 0;
-  width: 100%;
-  padding: 10px;
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
   background-color: #F6EDC7;
   z-index: 9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 80px; /* Ajuste para pegar al header, dependiendo de la altura del header */
 }
 
-/* Campo de entrada de búsqueda */
+.search-bar-container .content-width {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/* Contenedor común que engloba tanto el ícono como la barra de búsqueda */
+.search-bar-wrapper {
+  position: relative;
+  width: 100%;
+}
+/* Estilos para el input de búsqueda */
 #search-bar {
-  width: 50%;
-  padding: 10px 10px 10px 50px; /* Espacio a la izquierda para el icono */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  max-width: 100%; /* Asegura que no sobrepase el contenedor padre */
+  padding: 10px 10px 10px 40px; /* Espacio para el icono */
   font-size: 16px;
   border: 1px solid #A7A7A7;
   background-color: #A7A7A7;
   color: #5C5C5C;
   border-radius: 5px;
-  box-sizing: border-box; /* Asegura que el borde forme parte de las dimensiones */
-  transition: background-color 0.3s ease, border-color 0.3s ease, border-width 0.3s ease; /* Transición suave */
+  box-sizing: border-box;
 }
+
+/* Estilo para el ícono dentro del input */
+.search-icon {
+  position: absolute;
+  left: 10px; /* Espacio entre el borde izquierdo y el ícono */
+  top: 50%;
+  transform: translateY(-50%); /* Centra el ícono verticalmente en el input */
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* Evita que el ícono interfiera con la interacción del input */
+}
+
+
+/* Contenedor de la galería */
+.gallery-container {
+  column-count: 5; /* Define el número de columnas */
+  column-gap: 10px; /* Espacio entre las columnas */
+  margin-top: 150px; /* Ajusta este margen para que las primeras imágenes no queden ocultas bajo la barra */
+  padding: 0; /* Elimina cualquier padding adicional */
+}
+
+
+/* Evita que las imágenes se corten entre columnas */
+.gallery-item {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+/* Estilos de las imágenes */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón por encima */
+.gallery-item:hover img {
+  filter: brightness(50%);
+}
+
+.gallery-item .tags-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Muestra los tags al hacer hover */
+.gallery-item:hover .tags-overlay {
+  opacity: 1;
+}
+
 
 /* Placeholder en el campo de búsqueda */
 #search-bar::placeholder {
   color: #5C5C5C;
 }
-
-/* Estilos para el icono de búsqueda */
-.search-icon {
-  position: relative;
-  left: 1px; 
-  width: 20px;
-  height: 20px;
-  margin-right: -35px; 
-  z-index: 1;
-  pointer-events: none; 
+/* Muestra los tags al hacer hover */
+.gallery-item:hover .tags-overlay {
+  opacity: 1; /* Muestra los tags al pasar el ratón */
 }
-
 /* Efecto al pasar el ratón por encima de la barra de búsqueda */
 #search-bar:hover {
   background-color: #8F8F8F; 
@@ -1201,33 +1266,62 @@ html {
   box-sizing: border-box; 
 }
 
-
-/* Contenedor de la galería */
-.gallery-container {
-  margin-top: 160px; 
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); 
-  gap: 10px;
-  padding: 20px;
+/* Estilos para la lista de sugerencias */
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #A7A7A7;
+  border: 1px solid #A7A7A7;
+  border-top: none;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 10;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Estilo de los items de la galería */
-.gallery-item {
-  position: relative;
-  overflow: hidden;
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  color: #5C5C5C;
 }
 
-.gallery-item img {
+.suggestions-list li:hover {
+  background-color: #8F8F8F;
+  color: white;
+}
+
+/* Estilos para la pantalla de carga */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.gallery-item img:hover {
-  transform: scale(1.1); /* Efecto zoom al pasar por encima */
+.spinner {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #75A47F; /* Green */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
 }
 
+/* Animación de la pantalla de carga */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 
 .jarduerak {
