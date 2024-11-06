@@ -1,0 +1,39 @@
+
+.impar td:nth-of-type(even),
+.par td:nth-of-type(odd) {
+    background-color: #eeeed2;
+}
+
+.impar td:nth-of-type(odd),
+.par td:nth-of-type(even) {
+    background-color: #769656;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+td{
+    height: 60px;
+    width: 60px;
+    font-size: 48px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+tr{
+    align-items:center ;
+}
+
+body{
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+td {
+    border: 2px solid black
+}
